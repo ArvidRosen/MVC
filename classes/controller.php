@@ -6,6 +6,8 @@ class Controller {
             Model::login();
         } else if(isset($_POST["passVerify"])) {
             Model::register();
+        } else if(isset($_SESSION["user"])) {
+            
         }
     }
 }
