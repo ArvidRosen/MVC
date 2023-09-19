@@ -1,6 +1,6 @@
 <?php
-session_name("login");/* Session namn */
-session_start();/* Starta sessionen */
+/* session_name("login"); *//* Session namn */
+/* session_start(); *//* Starta sessionen */
 require("sql.php");/* Hämtar koden som finns i sql.php */
 $msg = "";/* Variabel som är tom som används senare i if statment */
 if(isset($_POST["username"])){
