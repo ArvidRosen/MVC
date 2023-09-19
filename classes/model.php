@@ -15,7 +15,7 @@ class User {
             if(isset($data[0])) {
                 $_SESSION["user"] = $data[0]["user"]; 
                 $msg = "Loggades in.";
-                header("index.php");
+                
             } else {
                 $msg = "Var god och försök igen.";
             }
@@ -28,13 +28,12 @@ class User {
                 if($_POST["pass"] == $_POST["passVerify"]) {
                     $salt = '$6$rounds=5000$kebab$';
                     $query = sql("INSERT INTO users(user,pass) Values('".$_POST["user"]."', '".substr(crypt($_POST["pass"], $salt), strlen($salt))."')");
-                    header("index.php");
+                    
                 }
             }
             
         }
     }
-
 }
 
 ?>

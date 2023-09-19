@@ -1,5 +1,5 @@
 <?php
-require("classes/mvc.php");
+require("classes/controller.php");
 session_name("BAS");
 ?>
 <!DOCTYPE html>
@@ -22,6 +22,7 @@ session_name("BAS");
 
 <?php
 if(isset($_GET["acc"])) {
+    $controller = new Controller();
     if($_GET["acc"] == "login") {
 ?>
         <form action="classes/controller.php" method="POST">
