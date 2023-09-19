@@ -1,6 +1,5 @@
 <?php
 require("classes/mvc.php");
-require("login.php");
 session_name("BAS");
 ?>
 <!DOCTYPE html>
