@@ -19,14 +19,19 @@ require("classes/class.php");
     </form>
 
 <?php
-if(isset($_POST["reglog"])) {
+if(isset($_GET["acc"])) {
     if($_GET["acc"] == "register") {
 ?>
-        <form action="register.php" method="POST"></form>
+        <form action="login.php" method="POST">
+            <input type="text" placeholder="username">
+            <input type="password" placeholder="password">
+        </form>
 <?php
     } else if($_GET["acc"]) {
 ?>
-        <form action="login.php" method="POST"></form>
+        <form action="register.php" method="POST">
+
+        </form>
 <?php
     }
 }
