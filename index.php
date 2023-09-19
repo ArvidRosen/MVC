@@ -25,17 +25,17 @@ if(isset($_GET["acc"])) {
     if($_GET["acc"] == "login") {
 ?>
         <form action="login.php" method="POST">
-            <input type="text" placeholder="username">
-            <input type="password" placeholder="password"><br><br>
+            <input type="text" name="user" placeholder="username">
+            <input type="password" name="pass" placeholder="password"><br><br>
             <input type="submit" value="submit">
         </form>
 <?php
     } else if($_GET["acc"] == "register") {
 ?>
         <form action="register.php" method="POST">
-            <input type="text" placeholder="username">
-            <input type="password" placeholder="password">
-            <input type="password" placeholder="password"><br><br>
+            <input type="text" name="user" placeholder="username">
+            <input type="password" name="pass" placeholder="password">
+            <input type="password" name="passVerify" placeholder="password verify"><br><br>
             <input type="submit" value="submit">
         </form>
 <?php
