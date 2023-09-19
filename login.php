@@ -11,7 +11,7 @@ if(isset($_POST["username"])){
     ]);
     if(isset($data[0])){/* If statment för att som skickar ett meddelande som beror på ifall man ger rätt lösenord och användarnamn*/
         $msg = "Loggades in";
-        $_SESSION["user"] = $data[0]["user"]; 
+        ["user"] = $data[0]["user"]; 
     }else{
         $msg = "Kunde inte logga in";
     }   
