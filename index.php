@@ -39,6 +39,7 @@ if(isset($_GET["acc"])) {
             <input type="password" name="passVerify" placeholder="password verify"><br><br>
             <input type="submit" value="submit">
         </form>
+       
 <?php
     } 
 }
@@ -56,3 +57,21 @@ if(isset($_GET["acc"])) {
       }
        echo $msg;
       ?>
+      <!DOCTYPE html>
+      <html lang="en">
+      <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+      </head>
+      <body>
+      <style>
+            body{
+                font-family: verdana;
+                background-image: url("https://cdn.pixabay.com/photo/2023/08/20/10/32/ai-generated-8202111_1280.jpg" );
+                background-repeat: no-repeat;
+                background-size: cover;
+
+        </style>
+      </body>
+      </html>
