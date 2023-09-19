@@ -1,9 +1,6 @@
-<?php 
-require_once("sql.php");
-
-class MVC {
-    
-    
-}
+<?php
+require("controller.php");
+require("model.php");
+require("view.php");
 
 ?>

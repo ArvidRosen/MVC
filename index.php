@@ -1,5 +1,6 @@
 <?php
-require("classes/class.php");
+require("classes/mvc.php");
+require_once("sql.php");
 ?>
 <!DOCTYPE html>
 <html lang="en">
