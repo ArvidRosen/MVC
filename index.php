@@ -24,7 +24,7 @@ require_once("sql.php");
 if(isset($_GET["acc"])) {
     if($_GET["acc"] == "login") {
 ?>
-        <form action="login.php" method="POST">
+        <form action="classes/controller.php" method="POST">
             <input type="text" name="user" placeholder="username">
             <input type="password" name="pass" placeholder="password"><br><br>
             <input type="submit" value="submit">
@@ -32,7 +32,7 @@ if(isset($_GET["acc"])) {
 <?php
     } else if($_GET["acc"] == "register") {
 ?>
-        <form action="register.php" method="POST">
+        <form action="classes/controller.php" method="POST">
             <input type="text" name="user" placeholder="username">
             <input type="password" name="pass" placeholder="password">
             <input type="password" name="passVerify" placeholder="password verify"><br><br>
