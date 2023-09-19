@@ -1,6 +1,6 @@
 <?php
 require("classes/mvc.php");
-require_once("sql.php");
+require("login.php")
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -44,5 +44,14 @@ if(isset($_GET["acc"])) {
 ?>
 
     
-</body>
-</html>
+<?php
+        if(!isset($_SESSION["user"])){
+    ?>
+        <?php
+        } else{
+      ?>
+      <a href="logout.php">Logga ut</a><br>
+      <?php
+      }
+       echo $msg;
+      ?>

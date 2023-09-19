@@ -1,6 +1,6 @@
 <?php
-/* session_name("login"); *//* Session namn */
-/* session_start(); *//* Starta sessionen */
+session_name("login"); /* Session namn */
+    session_start(); /* Starta sessionen */
 require("sql.php");/* Hämtar koden som finns i sql.php */
 $msg = "";/* Variabel som är tom som används senare i if statment */
 if(isset($_POST["username"])){/* Kollar ifall username var skickat via post */
@@ -11,7 +11,7 @@ if(isset($_POST["username"])){/* Kollar ifall username var skickat via post */
     ]);
     if(isset($data[0])){/* If statment för att som skickar ett meddelande som beror på ifall man ger rätt lösenord och användarnamn och ifall det matchar rätt så får man "Loggades in" och om inte så "Kunde inte logga in"*/
         $msg = "Loggades in";
-        ["user"] = $data[0]["user"]; 
+        $_SESSION["user"] = $data[0]["user"]; 
     }else{
         $msg = "Kunde inte logga in";
     }   
