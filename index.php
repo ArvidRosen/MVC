@@ -66,6 +66,7 @@ if(isset($_GET["acc"])) {
       <body>
       <style>
             body{
+                font-family: verdana;
                 background-image: url("https://cdn.pixabay.com/photo/2023/08/20/10/32/ai-generated-8202111_1280.jpg" );
                 background-repeat: no-repeat;
                 background-size: cover;
