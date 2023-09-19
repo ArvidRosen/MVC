@@ -5,7 +5,7 @@ require("sql.php");/* Hämtar koden som finns i sql.php */
 $msg = "";/* Variabel som är tom som används senare i if statment */
 if(isset($_POST["username"])){
     $salt = '$6$rounds=5000$kebab$';/* Saltet för kryptering */
-    $data = sql("SELECT * FROM users WHERE user = :user AND pass = :pass;",[
+    $data = sql("SELECT * FROM users WHERE user = :user AND pass = :pass;",[/* Väjler vilka profilerna user och pass inuti tabellen users */
         ":user" => $_POST["username"],/* hämtar upp informationen user */
         ":pass" => substr(crypt($_POST["password"], $salt), strlen($salt))/* använder saltet för att kryptera lösenordet och sedan hämtar informationen från pass*/
     ]);
