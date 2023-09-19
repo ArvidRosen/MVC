@@ -16,8 +16,8 @@ if(isset($_POST["username"])){/* Kollar ifall username var skickat via post */
         $msg = "Kunde inte logga in";
     }   
 }
-    /* echo substr(crypt($_POST["password"], $salt), strlen($salt)); */
-   /*  echo "<pre>";
+   /*  echo substr(crypt($_POST["password"], $salt), strlen($salt)); 
+    echo "<pre>";
     print_r($data);
-    echo "</pre>";  */
+    echo "</pre>";   */
 ?>
