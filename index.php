@@ -14,8 +14,8 @@ require("classes/class.php");
         <label for="login">Login?</label><br>
         <input type="radio" name="reglog" id="login" value="login"><br><br>
         <label for="register">Register?</label><br>
-        <input type="radio" name="reglog" id="register" value="register">
-        <input type="submit" value="submit2>
+        <input type="radio" name="reglog" id="register" value="register"><br><br>
+        <input type="submit" value="submit">
     </form>
 
 
