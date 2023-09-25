@@ -1,5 +1,5 @@
 <?php
-session_name("login");
+session_name("BAS");
 session_start();
 session_destroy();
 header("Location: index.php");
