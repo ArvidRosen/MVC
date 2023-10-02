@@ -15,6 +15,13 @@ require("view.php");/* Uses the code in view.php */
     <title>MVC</title>
 </head>
 <body>
+    <style>
+        body{
+            background-image: url("eggdavwater.png");
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+    </style>
     <form action="index.php" method="GET">
         <label for="login">Login?</label><br>
         <input type="radio" name="acc" id="login" value="login"><br><br>
