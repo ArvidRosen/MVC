@@ -28,8 +28,8 @@ class View {
             ":user" => $_POST["user"],
             ":pass" => trim(crypt($_POST["pass"], $salt), $salt)
         ]);
-        echo $_POST["user"]."<br>"; 
-        echo $_POST["pass"]."<br>";
+        echo "Username: ".$_POST["user"]."<br>"; 
+        echo "Password: ".$query[0]["pass"]."<br>";
         ?>
         <a href="logout.php">Logga ut</a><br>
         <?php
