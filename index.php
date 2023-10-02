@@ -1,9 +1,9 @@
 <?php
-session_name("BAS");
-session_start();
-require("controller.php");
-require("model.php");
-require("view.php");
+session_name("BAS");/* Gives the session a name */
+session_start();/* Starts the session */
+require("controller.php");/* Uses the code in controll.php */
+require("model.php");/* Uses the code in model.php */
+require("view.php");/* Uses the code in view.php */
 
 ?>
 <!DOCTYPE html>
@@ -24,19 +24,19 @@ require("view.php");
     </form>
 
 <?php
-    if(isset($_GET["acc"])) {
-        View::form($_GET["acc"]);
+    if(isset($_GET["acc"])) {/* Checks if the acc is set in GET request */
+        View::form($_GET["acc"]);/* If acc is set to GET request, it will call with form method of the class View */
     }
 
 ?>
 <?php
-if(isset($_POST["user"])) {
-    if(isset($_POST["pass"])) {
-        $controller = new Controller($_POST["user"], $_POST["pass"], $_POST["passVerify"]);
+if(isset($_POST["user"])) {/* Checks if the user is set to in POST request */
+    if(isset($_POST["pass"])) {/* Checks if the pass is set to in POST request */
+        $controller = new Controller($_POST["user"], $_POST["pass"], $_POST["passVerify"]);/* Creates a new instance of the Controller class with user, pass, passVerify */
     }
 }
-echo "<br>";
-echo Controller::throw();
+echo "<br>";/* Prints a linebreak */
+echo Controller::throw();/* Calls the Controller class with the method throw */
 ?>
 </body>
 </html>
