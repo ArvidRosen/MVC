@@ -1,18 +1,9 @@
 <?php
-<<<<<<< Updated upstream
 session_name("BAS");/* Gives the session a name */
 session_start();/* Starts the session */
 require("controller.php");/* Uses the code in controll.php */
 require("model.php");/* Uses the code in model.php */
 require("view.php");/* Uses the code in view.php */
-=======
-session_name("BAS");// settign the name of the session to "BAS"
-session_start();// starting the session
-require("controller.php");//
-require("model.php");
-require("view.php");
->>>>>>> Stashed changes
-
 ?>
 <!DOCTYPE html>
 <html lang="en">
