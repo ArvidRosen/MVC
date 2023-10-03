@@ -1,8 +1,8 @@
 <?php
 
-class View {
+class View { 
 
-    public static function form($acc) {
+    public static function form($acc) { 
         if($acc == "register") {
         ?>
             <form action="index.php" method="POST">
