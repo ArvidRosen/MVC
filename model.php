@@ -2,9 +2,9 @@
 require_once("sql.php");/* Retrieves the code in sql.php and uses it */
 class User {/* Creates a class named User */
     protected $newUser, $newPass, $newPassverify;/* 3 new protected variables */
-    function __construct($user, $pass, $passverify = null) {
-        $this->newUser = $user;
-        $this->newPass = $pass;
+    function __construct($user, $pass, $passverify = null) {/* A constructor function with user, pass, passverify in paramters with passverify starting with the value null, then proceed to give the variables user, pass, passverify new names in order to use them in the class  */
+        $this->newUser = $user; 
+        $this->newPass = $pass;/* Makes new names for the variables in order to give them new values */
         $this->newPassverify = $passverify;
     }
     public function login() {/* Creates a static function named login with user, pass as parameters */
