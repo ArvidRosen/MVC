@@ -1,5 +1,5 @@
 <?php
-session_name("BAS");/* Gives the session a name */
+session_name("BAS");// setting the name of the session to "BAS"
 session_start();/* Starts the session */
 require("controller.php");/* Uses the code in controll.php */
 require("model.php");/* Uses the code in model.php */
