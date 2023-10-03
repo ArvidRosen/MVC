@@ -21,28 +21,41 @@ require("view.php");/* Uses the code in view.php */
             background-size: cover;
         }
     </style>
-    <form action="index.php" method="GET">
+
+    
+
+<?php
+    if(isset($_GET["acc"])) {/* Checks if the acc is set in GET request */
+        View::form($_GET["acc"]);/* If acc is set to GET request, it will call with form method of the class View */
+    } else {
+        ?>
+        <form action="index.php" method="GET">
         <label for="login">Login?</label><br>
         <input type="radio" name="acc" id="login" value="login"><br><br>
         <label for="register">Register?</label><br>
         <input type="radio" name="acc" id="register" value="register"><br><br>
         <input type="submit" value="submit"><br><br>
     </form>
-
-<?php
-    if(isset($_GET["acc"])) {/* Checks if the acc is set in GET request */
-        View::form($_GET["acc"]);/* If acc is set to GET request, it will call with form method of the class View */
+    <?php
     }
 
 ?>
 <?php
 if(isset($_POST["user"])) {/* Checks if the user is set to in POST request */
     if(isset($_POST["pass"])) {/* Checks if the pass is set to in POST request */
-        $controller = new Controller($_POST["user"], $_POST["pass"], $_POST["passVerify"] = null, $_POST["acc"]);/* Creates a new instance of the Controller class with user, pass, passVerify */
+        if($_POST["acc"] == "login") {
+            $controller = new Controller($_POST["user"], $_POST["pass"], null, $_POST["acc"]);/* Creates a new instance of the Controller class with user, pass, passVerify as null and acc to prepare login*/
+        } else if ($_POST["acc"] == "register")
+            $controller = new Controller($_POST["user"], $_POST["pass"], $_POST["passVerify"], $_POST["acc"]);/* Creates a new instance of the Controller class with user, pass, passVerify, acc to prepare register */
     }
 }
 echo "<br>";/* Prints a linebreak */
-echo Controller::throw();/* Calls the Controller class with the method throw */
+if(!isset($_GET["msg"])) {
+    echo Controller::throw();/* Calls the Controller class with the method throw */
+} else {
+    echo $_GET["msg"];
+}
+
 ?>
 </body>
 </html>
