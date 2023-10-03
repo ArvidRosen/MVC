@@ -39,7 +39,7 @@ require("view.php");/* Uses the code in view.php */
 <?php
 if(isset($_POST["user"])) {/* Checks if the user is set to in POST request */
     if(isset($_POST["pass"])) {/* Checks if the pass is set to in POST request */
-        $controller = new Controller($_POST["user"], $_POST["pass"], $_POST["passVerify"]);/* Creates a new instance of the Controller class with user, pass, passVerify */
+        $controller = new Controller($_POST["user"], $_POST["pass"], $_POST["passVerify"] = null, $_POST["acc"]);/* Creates a new instance of the Controller class with user, pass, passVerify */
     }
 }
 echo "<br>";/* Prints a linebreak */

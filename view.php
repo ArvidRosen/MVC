@@ -9,6 +9,7 @@ class View {
                 <input type="text" name="user" placeholder="username">
                 <input type="password" name="pass" placehoslder="password">
                 <input type="password" name="passVerify" placeholder="password verify"><br><br>
+                <input type="hidden" name="acc" value="<?php echo $_GET["acc"]; ?>">
                 <input type="submit" value="submit">
             </form>
         <?php
@@ -17,6 +18,7 @@ class View {
             <form action="index.php" method="POST">
                 <input type="text" name="user" placeholder="username">
                 <input type="password" name="pass" placeholder="password"><br><br>
+                <input type="hidden" name="acc" value="<?php echo $_GET["acc"]; ?>">
                 <input type="submit" value="submit">
             </form>
             <?php
@@ -29,14 +31,9 @@ class View {
             ":pass" => trim(crypt($_POST["pass"], $salt), $salt)
         ]);
         echo "Username: ".$_POST["user"]."<br>"; 
-        echo "Password: ".$query[0]["pass"]."<br>";
         ?>
         <a href="logout.php">Logga ut</a><br>
         <?php
-    }
-
-    public static function err() {
-        echo urldecode($_GET["msg"]);
     }
 }
 
