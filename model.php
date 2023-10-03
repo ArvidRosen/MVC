@@ -25,8 +25,8 @@ class User {/* Creates a class named User */
                     $salt = '$6$rounds=5000$mvcproject$';/* creates salt for crypt */
                     $query = sql("INSERT INTO users(user, pass) Values('".$user."', '".trim(crypt($pass, $salt), $salt)."')");/* Inserts a new user into the table with the provided user and hashed pass */
                     header("Location: index.php?msg=".urlencode(trim(crypt($pass, $salt), $salt)));
-                } else {
-                    header("Location: index.php?msg=".urlencode("Du kunde inte registrera dig, vänligen försök igen."));
+                } else {/* Redirect to index.php with a success message or the hashed password */
+                    header("Location: index.php?msg=".urlencode("Du kunde inte registrera dig, vänligen försök igen."));/* If pass does not match passverify redirects to index.php with a error message */
                 }
             }
         }
