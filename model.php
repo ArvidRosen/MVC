@@ -1,7 +1,7 @@
 <?php
 require_once("sql.php");/* Retrieves the code in sql.php and uses it */
 class User {/* Creates a class named User */
-    protected $newUser, $newPass, $newPassverify;
+    protected $newUser, $newPass, $newPassverify;/* 3 new protected variables */
     function __construct($user, $pass, $passverify = null) {
         $this->newUser = $user;
         $this->newPass = $pass;
