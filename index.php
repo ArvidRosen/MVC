@@ -5,6 +5,8 @@ require("controller.php");/* Uses the code in controll.php */
 require("model.php");/* Uses the code in model.php */
 require("view.php");/* Uses the code in view.php */
 ?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -21,9 +23,6 @@ require("view.php");/* Uses the code in view.php */
             background-size: cover;
         }
     </style>
-
-    
-
 <?php
     if(isset($_GET["acc"])) {/* Checks if the acc is set in GET request */
         View::form($_GET["acc"]);/* If acc is set to GET request, it will call with form method of the class View */
@@ -38,12 +37,11 @@ require("view.php");/* Uses the code in view.php */
     </form>
     <?php
     }
-
 ?>
 <?php
 if(isset($_POST["user"])) {/* Checks if the user is set to in POST request */
     if(isset($_POST["pass"])) {/* Checks if the pass is set to in POST request */
-            $controller = new Controller($_POST["user"], $_POST["pass"], (isset($_POST["passVerify"])?$_POST["passVerify"]:null), $_POST["acc"]);/* Creates a new instance of the Controller class with user, pass, passVerify, acc to prepare register, checks if passVerify is set, if its set the value of passVerify will be included adn if not then it returns null */
+            $controller = new Controller($_POST["user"], $_POST["pass"], (isset($_POST["passVerify"])?$_POST["passVerify"]:null), $_POST["acc"]);/* Creates a new instance of the Controller class with user, pass, passVerify, acc to prepare register, checks if passVerify is set, if its set the value of passVerify will be included adn if not then it returns null, additionally using a ternary operator for the if() statement in the Controller parameters. */
     }
 }
 echo "<br>";/* Prints a linebreak */
@@ -52,7 +50,6 @@ if(!isset($_GET["msg"])) { // checks if msg is set.
 } else {
     echo $_GET["msg"]; // echoes error messages.
 }
-
 ?>
 </body>
 </html>
