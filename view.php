@@ -7,7 +7,7 @@ class View {
         ?>
             <form action="index.php" method="POST">
                 <input type="text" name="user" placeholder="username">
-                <input type="password" name="pass" placehoslder="password">
+                <input type="password" name="pass" placeholder="password">
                 <input type="password" name="passVerify" placeholder="password verify"><br><br>
                 <input type="hidden" name="acc" value="<?php echo $_GET["acc"]; ?>">
                 <input type="submit" value="submit">

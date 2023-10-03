@@ -14,9 +14,12 @@ class User {/* Creates a class named User */
                 ":user" => $this->newUser,
                 ":pass" => trim(crypt($this->newPass, $salt), $salt)
             ]);
-
             if(isset($data[0])) {
-                $_SESSION["user"] = $data[0]["user"]; /* If a matching user is found put the matching user key in SESSSION */
+                if($data[0]["user"] == $this->newUser) {
+                    $_SESSION["user"] = $data[0]["user"]; /* If a matching user is found put the matching user key in SESSSION */
+                } else {
+                    header("Location: index.php?msg=".urlencode("Användarnamnet är inkorrekt."));
+                }
             } else {
                 header("Location: index.php?msg=" . urlencode("Var god och försök igen."));/* If the matching user isn't found, redirect them to index.php with a error message */
             }
