@@ -29,9 +29,9 @@ class User {/* Creates a class named User */
                 if($this->newPass == $this->newPassverify) {/* Checks if pass matches passverify */
                     $salt = '$6$rounds=5000$mvcproject$';/* creates salt for crypt */
                     $query = sql("INSERT INTO users(user, pass) Values('".$this->newUser."', '".trim(crypt($this->newPass, $salt), $salt)."')");/* Inserts a new user into the table with the provided user and hashed pass */
-                    header("Location: index.php?msg=".urlencode(trim(crypt($this->newPass, $salt), $salt)));
+                    header("Location: index.php?msg=".urlencode(trim(crypt($this->newPass, $salt), $salt)));/* Redirect to index.php with a success message or the hashed password */
                 } else {
-                    header("Location: index.php?msg=".urlencode("Du kunde inte registrera dig, vänligen försök igen."));
+                    header("Location: index.php?msg=".urlencode("Du kunde inte registrera dig, vänligen försök igen."));/* If pass does not match passverify redirects to index.php with a error message */
                 }
             } 
         } 

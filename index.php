@@ -4,7 +4,6 @@ session_start();/* Starts the session */
 require("controller.php");/* Uses the code in controll.php */
 require("model.php");/* Uses the code in model.php */
 require("view.php");/* Uses the code in view.php */
-
 ?>
 <!DOCTYPE html>
 <html lang="en">
