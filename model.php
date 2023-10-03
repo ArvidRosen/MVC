@@ -14,11 +14,11 @@ class User {/* Creates a class named User */
                 ":user" => $this->newUser,
                 ":pass" => trim(crypt($this->newPass, $salt), $salt)
             ]);
-            if(isset($data[0])) {
-                if($data[0]["user"] == $this->newUser) {
+            if(isset($data[0])) { // checks if user is set in db
+                if($data[0]["user"] == $this->newUser) { // checks if assigned user from form is set in db
                     $_SESSION["user"] = $data[0]["user"]; /* If a matching user is found put the matching user key in SESSSION */
                 } else {
-                    header("Location: index.php?msg=".urlencode("Användarnamnet är inkorrekt."));
+                    header("Location: index.php?msg=".urlencode("Användarnamnet är inkorrekt.")); // if user comparison is incorrect then throw error.
                 }
             } else {
                 header("Location: index.php?msg=" . urlencode("Var god och försök igen."));/* If the matching user isn't found, redirect them to index.php with a error message */
