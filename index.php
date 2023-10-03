@@ -43,14 +43,14 @@ require("view.php");/* Uses the code in view.php */
 <?php
 if(isset($_POST["user"])) {/* Checks if the user is set to in POST request */
     if(isset($_POST["pass"])) {/* Checks if the pass is set to in POST request */
-            $controller = new Controller($_POST["user"], $_POST["pass"], (isset($_POST["passVerify"])?$_POST["passVerify"]:null), $_POST["acc"]);/* Creates a new instance of the Controller class with user, pass, passVerify, acc to prepare register */
+            $controller = new Controller($_POST["user"], $_POST["pass"], (isset($_POST["passVerify"])?$_POST["passVerify"]:null), $_POST["acc"]);/* Creates a new instance of the Controller class with user, pass, passVerify, acc to prepare register, checks if passVerify is set, if its set the value of passVerify will be included adn if not then it returns null */
     }
 }
 echo "<br>";/* Prints a linebreak */
-if(!isset($_GET["msg"])) {
+if(!isset($_GET["msg"])) { // checks if msg is set.
     echo Controller::throw();/* Calls the Controller class with the method throw */
 } else {
-    echo $_GET["msg"];
+    echo $_GET["msg"]; // echoes error messages.
 }
 
 ?>

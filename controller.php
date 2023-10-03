@@ -3,12 +3,12 @@
 class Controller {//create a class and name it "controller"
     function __construct($user, $pass, $passverify, $acc) {/* Creates a contructor with user, pass, passverify as parameters */
         if(isset($user)) {// checking if the code $user is existing and is not null
-            if($acc == "login") {// if the code $user is set it's going to check if the code $passverify is not set
-                $user = new User($user, $pass);
-                $user->login();/* If passverify is not set, then it will call the login method of the class User  */
-            } else if($acc == "register") {/* If passverify is set it will call register method of the class User */
-                $user = new User($user, $pass, $passverify);
-                $user->register();
+            if($acc == "login") {// if the code $user is set, checks if $acc is equal to the string login, then it will call the login function of the class User
+                $user = new User($user, $pass);// assigns a call to the class User assigned to $user to initialize the class.for the login function
+                $user->login(); // calls the login function 
+            } else if($acc == "register") {/* If $acc is equal to the string register, then it will call the register function of the class User */
+                $user = new User($user, $pass, $passverify); // assigns a call to the class User assigned to $user to initialize the class.for the register function
+                $user->register(); // calls the register function
 
             }     
         }
